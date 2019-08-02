@@ -10,10 +10,6 @@ public class BasePage {
 		
 	}
 	
-	public loginPage(){
-		
-		return new loginPage(driver);
-		
-	}
+	
 
 }
