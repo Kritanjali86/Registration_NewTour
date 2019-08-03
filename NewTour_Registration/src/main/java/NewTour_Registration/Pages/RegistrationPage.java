@@ -1,5 +1,6 @@
 package NewTour_Registration.Pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -108,14 +109,14 @@ public class RegistrationPage {
 	
 	// Entering the User Information 
 	public void setusername(String strusername) {
-		State.sendKeys(strusername);
+		username.sendKeys(strusername);
 	}
 	
 	public void setPassword(String strPassword) {
-		State.sendKeys(strPassword);
+		Password.sendKeys(strPassword);
 	}
 	public void setconfirmPassword(String strconfirmPassword) {
-		State.sendKeys(strconfirmPassword);
+		confirmPassword.sendKeys(strconfirmPassword);
 	}
 	public void setRegister(String strRegister) {
 		Register.sendKeys(strRegister);
@@ -136,17 +137,48 @@ public class RegistrationPage {
 		setState("MD");
 		setpostalCode("20879");
 	   Select Countrydp= new Select(Country);
-	   
 	   Countrydp.selectByIndex(215);
 	   setusername("Aashiya");
 	   setPassword("Test123");
-	  
-		
+	   setconfirmPassword("Test123");
+	//  String username= driver.findElement(By.name("email")).getAttribute("value");
+	 // System.out.println(username);
 	}
 	public void submitRegistration(){
 		 Register.click();
+		 //String output = driver findElement(By
+							//.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[3]/td/p[3]/a/font/b"))
+					//.getText();
+			//output = output.split(" ")[5];
+			//System.out.println("Output is :" + output);
+			
 	}
-	}
+		public void validateUsername(){
+			  String username= driver.findElement(By.name("email")).getAttribute("value");
+			  System.out.println(username);
+			  
+			  String output = driver
+						.findElement(By
+								.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[3]/td/p[3]/a/font/b"))
+						.getText();
+				output = output.split(" ")[5];
+				System.out.println("Output is :" + output);
+				
+		if(username.equals(output)){
+			System.out.println("Test Passed");
+		}
+		else{
+			System.out.println("Test Failed");
+		}
+				
+				
+			}
+			  
+			  
+			  
+		}
+	
+	
 	
 	
 
