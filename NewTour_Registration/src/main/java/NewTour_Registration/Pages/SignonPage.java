@@ -1,5 +1,6 @@
 package NewTour_Registration.Pages;
 
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,6 +15,7 @@ public class SignonPage {
 	 */
 	
 	RegistrationPage RegisterPage;
+	
 	WebDriver driver;
 	@FindBy(name = "userName")
 	WebElement username;
@@ -29,19 +31,32 @@ public class SignonPage {
 		PageFactory.initElements(driver, this);
 
 	}
+
+public void setUserName(String strUserName){
+	username.sendKeys(strUserName);
 	
-	
-	
-	
-public void setUserName(String UserName){
-	username.sendKeys(UserName);
 }
 
-public void login(){
-  String username= driver.findElement(By.name("email")).getAttribute("value");
-	  System.out.println(username);
-	setUserName(username);
+public void setpwd(String strpwd){
+	Password.sendKeys(strpwd);
+	
 }
+
+public void submit(){
+	LoginButton.click();
+}
+
+
+
+public void login(){
+	
+	setUserName("mercury");
+	setpwd("mercury");
+	submit();
+	
+}
+
+
 
 }
 

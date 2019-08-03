@@ -138,9 +138,9 @@ public class RegistrationPage {
 		setpostalCode("20879");
 	   Select Countrydp= new Select(Country);
 	   Countrydp.selectByIndex(215);
-	   setusername("Aashiya");
-	   setPassword("Test123");
-	   setconfirmPassword("Test123");
+	   setusername("mercury");
+	   setPassword("mercury");
+	   setconfirmPassword("mercury");
 	//  String username= driver.findElement(By.name("email")).getAttribute("value");
 	 // System.out.println(username);
 	}

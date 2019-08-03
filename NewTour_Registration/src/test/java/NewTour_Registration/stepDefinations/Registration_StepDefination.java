@@ -2,6 +2,7 @@ package NewTour_Registration.stepDefinations;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -55,11 +56,20 @@ public class Registration_StepDefination {
 		
 		loginSignOn = new SignonPage(driver);
 		loginSignOn.login();
+		
 
 	}
 
 	@Then("^User should be able to login successfully\\.$")
 	public void user_should_be_able_to_login_successfully() throws Throwable {
+		if (driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[1]/td/img")).isDisplayed()){
+			System.out.println("Test is Passed");
+		}
+		else{
+			System.out.println("Test is Failed");
+		}
+		
+		
 
 	}
 
