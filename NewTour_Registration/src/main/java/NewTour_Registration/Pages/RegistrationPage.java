@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 public class RegistrationPage {
 	/**
@@ -101,7 +102,7 @@ public class RegistrationPage {
 	}
 
 	public void setCountry(String strCountry) {
-		City.sendKeys(strCountry);
+		Country.sendKeys(strCountry);
 	}
 
 	
@@ -120,4 +121,32 @@ public class RegistrationPage {
 		Register.sendKeys(strRegister);
 	}
 	
-}
+	public void Register(){
+		registrationButton.click();
+	}
+	public void Contact_Info(){
+		// Click on the Registration Button 
+		setFirstName("Mandesh");
+		setlastName("Giri");
+		setphoneNo("222-22-2222");
+		setemail("test@test.com");
+		
+		setAddress("123 TEST ");
+		setCity("Test Test");
+		setState("MD");
+		setpostalCode("20879");
+	   Select Countrydp= new Select(Country);
+	   
+	   Countrydp.selectByIndex(215);
+	   setusername("Aashiya");
+	   setPassword("Test123");
+	  
+		
+	}
+	public void submitRegistration(){
+		 Register.click();
+	}
+	}
+	
+	
+
