@@ -2,12 +2,12 @@ package NewTour_Registration.stepDefinations;
 
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import NewTour_Registration.Pages.RegisterSignOnPage;
 import NewTour_Registration.Pages.RegistrationPage;
+import NewTour_Registration.Pages.SignonPage;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -15,7 +15,8 @@ import cucumber.api.java.en.Then;
 public class Registration_StepDefination {
 	WebDriver driver;
 	RegistrationPage RegisterPage;
-	 RegisterSignOnPage  SignOnRegister;
+	RegisterSignOnPage SignOnRegister;
+	SignonPage loginSignOn;
 
 	@Given("^User launch the URL$")
 	public void user_launch_the_URL() throws Throwable {
@@ -44,18 +45,22 @@ public class Registration_StepDefination {
 	public void user_clicks_on_the_Submit_button() throws Throwable {
 		RegisterPage = new RegistrationPage(driver);
 		RegisterPage.submitRegistration();
-		
+
 	}
 
 	@And("^User login with the username and password$")
 	public void user_login_with_the_username_and_password() throws Throwable {
-		SignOnRegister= new RegisterSignOnPage(driver);
-				SignOnRegister.setSignOn();
+		SignOnRegister = new RegisterSignOnPage(driver);
+		SignOnRegister.setSignOn();
+		
+		loginSignOn = new SignonPage(driver);
+		loginSignOn.login();
+
 	}
 
 	@Then("^User should be able to login successfully\\.$")
 	public void user_should_be_able_to_login_successfully() throws Throwable {
-		System.out.println("This is Test 6");
+
 	}
 
 }
