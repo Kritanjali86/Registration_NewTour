@@ -141,9 +141,9 @@ public class RegistrationPage {
 	   setusername("mercury");
 	   setPassword("mercury");
 	   setconfirmPassword("mercury");
-	//  String username= driver.findElement(By.name("email")).getAttribute("value");
-	 // System.out.println(username);
-	}
+	 //String username= driver.findElement(By.name("email")).getAttribute("value");
+	 //System.out.println(username);
+}
 	public void submitRegistration(){
 		 Register.click();
 		 //String output = driver findElement(By
